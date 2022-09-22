@@ -7,7 +7,15 @@ import Colors from "../constants/Colors";
 import { ColorSchemeName } from "react-native";
 import useColorScheme from "../hooks/useColorScheme";
 
-export default function FridgeItemView(props: { item: FridgeItem }) {
+export default function FridgeItemView(props: {
+    item: {
+        name: string;
+        image: string;
+        quantity: number;
+        unit_symbol: string;
+        expiry_date: Date;
+    };
+}) {
     const styles = useStyles(useColorScheme());
     return (
         <TouchableOpacity activeOpacity={0}>
@@ -18,12 +26,13 @@ export default function FridgeItemView(props: { item: FridgeItem }) {
                 ></Image>
                 <View style={styles.column}>
                     <Text style={styles.heading}>{props.item.name}</Text>
-                    <Text>{props.item.category}</Text>
+                    {/* <Text>{props.item.category}</Text> */}
                 </View>
                 <View style={styles.column}>
-                    <Text>Expiry: {props.item.expiry}</Text>
+                    <Text>Expiry: {props.item.expiry_date}</Text>
                     <Text>
-                        Quantity: {props.item.quantity + props.item.unit_symbol}
+                        Quantity:{" "}
+                        {props.item.quantity + " " + props.item.unit_symbol}
                     </Text>
                 </View>
             </View>

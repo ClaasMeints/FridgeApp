@@ -23,10 +23,10 @@ export default function FridgeContent({
     const getFridgeContent = async () => {
         try {
             const response = await fetch(
-                "http://192.168.178.30:3000/fridgeContent/claas"
+                "http://192.168.178.30:3000/api/v1/device_content/admin"
             );
             const json = await response.json();
-            setFridgeContent(json[0]);
+            setFridgeContent(json);
         } catch (error) {
             console.error(error);
         } finally {
