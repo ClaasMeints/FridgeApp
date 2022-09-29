@@ -4,7 +4,7 @@ import useColorScheme from "../hooks/useColorScheme";
 import React from "react";
 import { Text, View } from "../components/Themed";
 
-export default function Shopping() {
+export default function Devices() {
     const styles = useStyles(useColorScheme());
     return (
         <View style={styles.container}>

@@ -11,6 +11,7 @@ export default function FridgeItemView(props: {
     item: {
         name: string;
         image: string;
+        quantity_str: string;
         quantity: number;
         unit_symbol: string;
         expiry_date: Date;
@@ -29,10 +30,10 @@ export default function FridgeItemView(props: {
                     {/* <Text>{props.item.category}</Text> */}
                 </View>
                 <View style={styles.column}>
-                    <Text>Expiry: {props.item.expiry_date}</Text>
                     <Text>
                         Quantity:{" "}
-                        {props.item.quantity + " " + props.item.unit_symbol}
+                        {props.item.quantity_str ||
+                            props.item.quantity + " " + props.item.unit_symbol}
                     </Text>
                 </View>
             </View>

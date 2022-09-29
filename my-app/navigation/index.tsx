@@ -20,7 +20,7 @@ import useColorScheme from "../hooks/useColorScheme";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import FridgeContent from "../screens/FridgeContent";
-import Meals from "../screens/Meals";
+import Devices from "../screens/Devices";
 import Shopping from "../screens/Shopping";
 import Settings from "../screens/Settings";
 import {
@@ -99,36 +99,22 @@ function BottomTabNavigator() {
                             size={size}
                         />
                     ),
-                    headerRight: () => (
-                        <Pressable
-                            onPress={() => navigation.navigate("Modal")}
-                            style={({ pressed }) => ({
-                                opacity: pressed ? 0.5 : 1,
-                            })}
-                        >
-                            <MaterialIcons
-                                name="category"
-                                size={25}
-                                color={Colors[colorScheme].text}
-                                style={{ marginRight: 15 }}
-                            />
-                        </Pressable>
-                    ),
+                    // headerRight: () => (
+                    //     <Pressable
+                    //         onPress={() => navigation.navigate("Modal")}
+                    //         style={({ pressed }) => ({
+                    //             opacity: pressed ? 0.5 : 1,
+                    //         })}
+                    //     >
+                    //         <MaterialIcons
+                    //             name="category"
+                    //             size={25}
+                    //             color={Colors[colorScheme].text}
+                    //             style={{ marginRight: 15 }}
+                    //         />
+                    //     </Pressable>
+                    // ),
                 })}
-            />
-            <BottomTab.Screen
-                name="Meals"
-                component={Meals}
-                options={{
-                    title: "Meals",
-                    tabBarIcon: ({ color, size }) => (
-                        <MaterialIcons
-                            name="restaurant-menu"
-                            color={color}
-                            size={size}
-                        />
-                    ),
-                }}
             />
             <BottomTab.Screen
                 name="Shopping List"
@@ -138,6 +124,20 @@ function BottomTabNavigator() {
                     tabBarIcon: ({ color, size }) => (
                         <MaterialIcons
                             name="shopping-cart"
+                            color={color}
+                            size={size}
+                        />
+                    ),
+                }}
+            />
+            <BottomTab.Screen
+                name="Devices"
+                component={Devices}
+                options={{
+                    title: "Devices",
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialIcons
+                            name="devices"
                             color={color}
                             size={size}
                         />
